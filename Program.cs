@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Ovn2_FlowControl;
 
-namespace FlowControl
+namespace Ovn2_FlowControl
 {
-    internal class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            var exercises = new List<IExcercise>
+            var exercises = new List<IExercise>
             {
                 new SingleTicketExercise(),
                 new GroupTicketExercise(),
