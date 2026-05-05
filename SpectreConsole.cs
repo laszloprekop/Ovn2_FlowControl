@@ -33,11 +33,23 @@ public class SpectreConsole(List<IExercise> exercises, IExercise currentExercise
     public string? ReadLine(string prompt)
     {
         _lines[^1] += prompt;
-        Refresh();
+        AnsiConsole.Clear();
+        AnsiConsole.Write(BuildRenderable());
+
+        // Move cursor inside the right panel at the end of the prompt text.
+        // Right panel rows: 0=top-border, 1..descRows=description, then divider, blank, then _lines.
+        int rightContentWidth = Math.Max(1, Console.WindowWidth - 42); // 38 left-col + 4 borders/padding
+        int descRows = (int)Math.Ceiling(currentExercise.Description.Length / (double)rightContentWidth);
+        int promptLen = _lines[^1].Length;
+        int row = descRows + _lines.Count + 2 + promptLen / rightContentWidth;
+        int col = 40 + promptLen % rightContentWidth;
+        Console.SetCursorPosition(Math.Min(col, Console.WindowWidth - 1), Math.Min(row, Console.WindowHeight - 1));
+
         var input = Console.ReadLine() ?? string.Empty;
         _lines[^1] += input;
         _lines.Add(string.Empty);
-        Refresh();
+        AnsiConsole.Clear();
+        AnsiConsole.Write(BuildRenderable());
         return input;
     }
 
