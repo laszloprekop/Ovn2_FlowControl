@@ -11,6 +11,7 @@ public class Menu(List<IExercise> exercises)
 
         while (running)
         {
+            Console.Clear();
             Console.WriteLine("Välkommen till huvudmenyn.");
 
             for (int i = 0; i < exercises.Count; i++)
@@ -36,6 +37,10 @@ public class Menu(List<IExercise> exercises)
                     header.Render();
 
                     excercise.Run();
+
+                    Console.WriteLine();
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
                     break;
                 default:
                     Console.WriteLine($"Felaktig val. välj 0-{exercises.Count}.");
