@@ -7,14 +7,14 @@ public class ThirdWordExercise : IExercise
     public string Title => "What's the Third Word?";
     public string Description => "Finds the third word in a sentence";
 
-    public void Run()
+    public void Run(IConsoleAdapter console)
     {
-        Console.Write("Skriv en mening med minst 3 ord: ");
+        console.Write("Skriv en mening med minst 3 ord: ");
         string? mening = Console.ReadLine();
 
         if (string.IsNullOrWhiteSpace(mening))
         {
-            Console.WriteLine("Du måste skriva en mening.");
+            console.WriteLine("Du måste skriva en mening.");
             return;
         }
 
@@ -22,10 +22,10 @@ public class ThirdWordExercise : IExercise
 
         if (ord.Length < 3)
         {
-            Console.WriteLine("Mening måste innehålla minst 3 ord.");
+            console.WriteLine("Mening måste innehålla minst 3 ord.");
             return;
         }
 
-        Console.WriteLine($"Det tredje ordet är: {ord[2]}");
+        console.WriteLine($"Det tredje ordet är: {ord[2]}");
     }
 }
