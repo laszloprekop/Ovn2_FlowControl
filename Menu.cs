@@ -33,7 +33,7 @@ public class Menu(List<IExercise> exercises)
                 case >= 1 when choice <= exercises.Count:
                     var excercise = exercises[choice - 1];
 
-                    IViewFragment header = new Header(excercise.Title, excercise.Description);
+                    IViewFragment header = new SpectreHeader(excercise.Title, excercise.Description);
                     header.Render();
 
                     excercise.Run();
