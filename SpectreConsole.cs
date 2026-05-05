@@ -18,11 +18,13 @@ public class SpectreConsole(List<IExercise> exercises, IExercise currentExercise
     {
         if (_lines.Count == 0) _lines.Add(string.Empty);
         _lines[^1] += text;
+        _context?.Refresh();
     }
 
     public void WriteLine(string text)
     {
         _lines.Add(text);
+        _context?.Refresh();
     }
 
     public string? ReadLine(string prompt)
@@ -31,6 +33,7 @@ public class SpectreConsole(List<IExercise> exercises, IExercise currentExercise
         var input = Console.ReadLine();
         if (_lines.Count > 0) _lines[^1] += input;
         _lines.Add(string.Empty);
+        _context?.Refresh();
         return input;
     }
 
