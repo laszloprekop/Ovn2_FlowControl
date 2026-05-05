@@ -28,7 +28,7 @@ public class Menu(List<IExercise> exercises)
                 case >= 1 when choice <= exercises.Count:
                     var excercise = exercises[choice - 1];
                     _layout.RenderExercise(excercise);
-                    excercise.Run();
+                    excercise.Run(new StandardConsole());
                     
                     Console.WriteLine();
                     Console.WriteLine("Press any key to continue...");
