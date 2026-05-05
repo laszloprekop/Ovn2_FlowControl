@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace Ovn2_FlowControl;
 
@@ -18,8 +17,6 @@ public class GroupTicketExercise : IExercise
             return;
         }
 
-        var persons = new List<Person>();
-
         int total = 0;
 
         for (int i = 1; i <= antal; i++)
@@ -33,17 +30,17 @@ public class GroupTicketExercise : IExercise
                 return;
             }
 
-            persons.Add(new Person(alder));
-            if (alder < 5 || alder > 100)
+            var person = new Person(alder);
+            var price = person.GetTicketPrice();
+
+            if (price == 0)
             {
                 Console.WriteLine($"Person {i}: Gratis");
             }
-            else if (alder < 20)
-                total += 80;
-            else if (alder > 64)
-                total += 90;
             else
-                total += 120;
+            {
+                total += price;
+            }
         }
 
         Console.WriteLine($"Antal personer: {antal}");
