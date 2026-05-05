@@ -4,5 +4,5 @@ public interface IConsoleAdapter
 {
     void WriteLine(string text);
     void Write(string text);
-    string? ReadLine();
+    string? ReadLine(string prompt);
 }
