@@ -51,7 +51,7 @@ public class SpectreConsole(List<IExercise> exercises, IExercise currentExercise
         var sb = new StringBuilder();
 
         for (int i = 0; i < exercises.Count; i++)
-            sb.AppendLine($"[white][[{i + 1}]][/] {Markup.Escape(exercises[i].Title)}[/]");
+            sb.AppendLine($"[white][[{i + 1}]][/] {Markup.Escape(exercises[i].Title)}");
 
         return new Columns(
             new Panel(new Markup(sb.ToString()))
