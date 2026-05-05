@@ -5,22 +5,17 @@ namespace Ovn2_FlowControl;
 
 public class Menu(List<IExercise> exercises)
 {
+    private readonly ConsoleLayout _layout = new ConsoleLayout(exercises);
+    
     public void Run()
     {
         var running = true;
 
         while (running)
         {
-            Console.Clear();
-            Console.WriteLine("Välkommen till huvudmenyn.");
-
-            for (int i = 0; i < exercises.Count; i++)
-                Console.WriteLine($"[{i + 1}] →  {exercises[i].Title}");
-
-            Console.WriteLine();
-            Console.WriteLine($"Välj övning eller [0] →  Avsluta");
+            _layout.RenderMenu();
             Console.Write("> ");
-
+            
             if (!int.TryParse(Console.ReadLine(), out int choice))
                 choice = -1;
 
@@ -32,12 +27,9 @@ public class Menu(List<IExercise> exercises)
                     break;
                 case >= 1 when choice <= exercises.Count:
                     var excercise = exercises[choice - 1];
-
-                    IViewFragment header = new SpectreHeader(excercise.Title, excercise.Description);
-                    header.Render();
-
+                    _layout.RenderExercise(excercise);
                     excercise.Run();
-
+                    
                     Console.WriteLine();
                     Console.WriteLine("Press any key to continue...");
                     Console.ReadKey();

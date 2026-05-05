@@ -13,20 +13,20 @@ public class ConsoleLayout(List<IExercise> exercises)
         AnsiConsole.Write(
             new Panel(BuildMenuMarkup())
                 .RoundedBorder()
-                .Header("[bold]Main Menu[/bold]")
+                .BorderColor(Color.SkyBlue2)
+                .Header("[bold]Main Menu[/]")
         );
         AnsiConsole.Write(
-            new Panel(new Markup($"[grey][0] Avsluta  [[1-{exercises.Count}]] Välj övning"))
-                .RoundedBorder()
-        );
+                new Markup($"[white][[0]][/] Avsluta · [white][[1-{exercises.Count}]][/] Välj övning\n"))
+            ;
     }
 
     private Markup BuildMenuMarkup()
     {
-        var sb = new StringBuilder();
+        var sb = new StringBuilder("\n");
         for (int i = 0; i < exercises.Count; i++)
         {
-            sb.AppendLine($"[[{i + 1}]] {Markup.Escape(exercises[i].Title)}");
+            sb.AppendLine($"[white][[{i + 1}]][/] {Markup.Escape(exercises[i].Title)}");
         }
 
         return new Markup(sb.ToString());
@@ -36,18 +36,21 @@ public class ConsoleLayout(List<IExercise> exercises)
     {
         AnsiConsole.Clear();
         var mainContent = new Markup(
-                              $"[bold]{Markup.Escape(exercise.Title)}[/]\n") +
-                          $"[italic]{Markup.Escape(exercise.Description)}[/]\n\n" +
-                          $"[grey]────────────────────────────────[/]";
+            $"[italic]{Markup.Escape(exercise.Description)}[/]\n" +
+            $"[grey]──────────────────────────────────────────────[/]\n");
 
         AnsiConsole.Write(new Columns(
-            new Panel(BuildMenuMarkup())
-                .RoundedBorder()
-                .Header("[bold]Main Menu[/bold]"),
-            new Panel(mainContent)
-                .RoundedBorder()
-                .Header($"[bold]{Markup.Escape(exercise.Title)}[/bold]")));
-        AnsiConsole.Write(new Panel(
-            new Markup("ℹ️ [grey]  Press any key to continue...[/]")));
+                new Panel(BuildMenuMarkup())
+                    .RoundedBorder()
+                    .Header("[bold]Main Menu[/]"),
+                new Panel(mainContent)
+                    .RoundedBorder()
+                    .Header($"[bold]{Markup.Escape(exercise.Title)}[/]\n")
+            )
+        );
+
+        AnsiConsole.Write(
+                new Markup("ℹ️ [blue]Press any key to continue...[/]"))
+            ;
     }
 }
