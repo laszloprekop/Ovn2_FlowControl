@@ -59,7 +59,7 @@ public class SpectreConsole(List<IExercise> exercises, IExercise currentExercise
                 .Header("[bold]Main Menu[/]"),
             new Panel(mainContent)
                 .RoundedBorder()
-                .Header("[bold]{Markup.Escape(currentExercise.Title)}[/]")
+                .Header($"[bold]{Markup.Escape(currentExercise.Title)}[/]")
         );
     }
 }
