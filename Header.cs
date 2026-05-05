@@ -4,15 +4,20 @@ namespace Ovn2_FlowControl;
 
 class Header : IViewFragment
 {
-    private readonly IExercise _exercise;
+    private readonly string _title;
+    private readonly string _description;
 
-    public Header(IExercise exercise) => _exercise = exercise;
+    public Header(string title, string description)
+    {
+        _title = title;
+        _description = description;
+    }
 
     public void Render()
     {
-        Console.WriteLine(_exercise.Title);
-        Console.WriteLine(_exercise.Description);
-        Console.WriteLine(new string('─', Math.Max(_exercise.Title.Length, _exercise.Description.Length)));
+        Console.WriteLine(_title);
+        Console.WriteLine(_description);
+        Console.WriteLine(new string('─', Math.Max(_title.Length, _description.Length)));
         Console.WriteLine();
     }
 }
