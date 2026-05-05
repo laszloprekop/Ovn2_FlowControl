@@ -12,7 +12,7 @@ public class GroupTicketExercise : IExcercise
     public void Run() => throw new System.NotImplementedException();
 }
 
-public class RepeatedTicketExercise : IExcercise
+public class RepeatTextExercise : IExcercise
 {
     public string Title => "Text Repeater";
     public void Run() => throw new System.NotImplementedException();
