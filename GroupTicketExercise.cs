@@ -9,8 +9,7 @@ public class GroupTicketExercise : IExercise
 
     public void Run(IConsoleAdapter console)
     {
-        console.Write("Hur många personer är ni? ");
-        string? antalInput = Console.ReadLine();
+        string? antalInput = console.ReadLine("Hur många personer är ni? ");
 
         if (!int.TryParse(antalInput, out int antal) || antal <= 0)
         {
@@ -22,8 +21,7 @@ public class GroupTicketExercise : IExercise
 
         for (int i = 1; i <= antal; i++)
         {
-            console.Write($"Ange ålder för person {i}: ");
-            string? alderInput = Console.ReadLine();
+            string? alderInput = console.ReadLine($"Ange ålder för person {i}: ");
 
             if (!int.TryParse(alderInput, out int alder) || alder < 0)
             {
