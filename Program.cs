@@ -1,5 +1,6 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
+using Ovn2_FlowControl;
 
 namespace FlowControl
 {
@@ -7,18 +8,24 @@ namespace FlowControl
     {
         static void Main(string[] args)
         {
+            var exercises = new List<IExcercise>
+            {
+                new SingleTicketExercise(),
+                new GroupTicketExercise(),
+                new RepeatTextExercise(),
+                new ThirdWordExercise()
+            };
+
             bool running = true;
 
             while (running)
             {
                 Console.WriteLine("Välkommen till huvudmenyn.");
                 Console.WriteLine("Skriv en siffra för att välja funktion.");
-                Console.WriteLine("0 = Avsluta");
-                Console.WriteLine("1 = Ungdom eller pensionär");
-                Console.WriteLine("2 = Pris för sällskap");
-                Console.WriteLine("3 = Upprepa tio gånger");
-                Console.WriteLine("4 = Det tredje ordet");
-                Console.Write("Ditt val: ");
+                for (int i = 1; i <= exercises.Count; i++)
+                    Console.WriteLine($"{i} = {exercises[i].Title}");
+
+                Console.Write("> ");
 
                 string? input = Console.ReadLine();
 
@@ -59,7 +66,7 @@ namespace FlowControl
             Console.Write("Ange ålder: ");
             string? input = Console.ReadLine();
 
-            if (!int.TryParse(input, out int alder))    // Jämför med int.Parse(input) --> "hej" --> Exception
+            if (!int.TryParse(input, out int alder)) // Jämför med int.Parse(input) --> "hej" --> Exception
             {
                 Console.WriteLine("Ogiltig ålder.");
                 return;
@@ -161,4 +168,3 @@ namespace FlowControl
         }
     }
 }
-
