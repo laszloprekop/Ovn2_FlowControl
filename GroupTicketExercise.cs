@@ -5,6 +5,7 @@ namespace Ovn2_FlowControl;
 public class GroupTicketExercise : IExercise
 {
     public string Title => "Group Ticket Price calculator";
+    public string Description => "Calculates price for a group with different ages";
 
     public void Run()
     {
