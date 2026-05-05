@@ -22,39 +22,24 @@ namespace FlowControl
             {
                 Console.WriteLine("Välkommen till huvudmenyn.");
                 Console.WriteLine("Skriv en siffra för att välja funktion.");
-                for (int i = 1; i <= exercises.Count; i++)
+                for (int i = 0; i < exercises.Count; i++)
                     Console.WriteLine($"{i} = {exercises[i].Title}");
 
                 Console.Write("> ");
 
                 string? input = Console.ReadLine();
 
-                switch (input)
+                if (input == "0")
                 {
-                    case "0":
                         running = false;
                         Console.WriteLine("Programmet avslutas.");
-                        break;
 
-                    case "1":
-                        UngdomEllerPensionar();
-                        break;
-
-                    case "2":
-                        PrisForSallskap();
-                        break;
-
-                    case "3":
-                        UpprepaTioGanger();
-                        break;
-
-                    case "4":
-                        DetTredjeOrdet();
-                        break;
-
-                    default:
-                        Console.WriteLine("Felaktig input, välj 0-4.");
-                        break;
+                } else if (int.TryParse(input, out int choice) && choice >= 0 && choice < exercises.Count)
+                {
+                    exercises[choice].Run();
+                } else
+                {
+                    Console.WriteLine("Felaktig input.");
                 }
 
                 Console.WriteLine();
