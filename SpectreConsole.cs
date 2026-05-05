@@ -64,6 +64,7 @@ public class SpectreConsole(List<IExercise> exercises, IExercise currentExercise
         );
 
         var sb = new StringBuilder();
+        sb.AppendLine();
         for (int i = 0; i < exercises.Count; i++)
             sb.AppendLine($"[white][[{i + 1}]][/] {Markup.Escape(exercises[i].Title)}");
 
@@ -76,6 +77,7 @@ public class SpectreConsole(List<IExercise> exercises, IExercise currentExercise
                 .Header("[bold]Main Menu[/]"),
             new Panel(mainContent)
                 .RoundedBorder()
+                .BorderColor(Color.SkyBlue2)
                 .Header($"[bold]{Markup.Escape(currentExercise.Title)}[/]")
         );
         return table;
