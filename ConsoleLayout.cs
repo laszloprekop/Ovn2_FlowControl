@@ -31,4 +31,23 @@ public class ConsoleLayout(List<IExercise> exercises)
 
         return new Markup(sb.ToString());
     }
+
+    public void RenderExercise(IExercise exercise)
+    {
+        AnsiConsole.Clear();
+        var mainContent = new Markup(
+                              $"[bold]{Markup.Escape(exercise.Title)}[/]\n") +
+                          $"[italic]{Markup.Escape(exercise.Description)}[/]\n\n" +
+                          $"[grey]────────────────────────────────[/]";
+
+        AnsiConsole.Write(new Columns(
+            new Panel(BuildMenuMarkup())
+                .RoundedBorder()
+                .Header("[bold]Main Menu[/bold]"),
+            new Panel(mainContent)
+                .RoundedBorder()
+                .Header($"[bold]{Markup.Escape(exercise.Title)}[/bold]")));
+        AnsiConsole.Write(new Panel(
+            new Markup("ℹ️ [grey]  Press any key to continue...[/]")));
+    }
 }
