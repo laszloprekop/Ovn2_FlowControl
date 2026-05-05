@@ -1,5 +1,3 @@
-using System;
-
 namespace Ovn2_FlowControl;
 
 public class RepeatTextExercise : IExercise
@@ -9,15 +7,14 @@ public class RepeatTextExercise : IExercise
 
     public void Run(IConsoleAdapter console)
     {
-        console.Write("Skriv en text: ");
-        string? text = Console.ReadLine();
+        string? text = console.ReadLine("Skriv en text: ");
 
         for (int i = 1; i <= 10; i++)
         {
             console.Write($"{i}. {text} ");
         }
 
-        Console.WriteLine();
+        console.WriteLine("");
 
     }
 }

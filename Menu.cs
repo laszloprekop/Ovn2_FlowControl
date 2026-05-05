@@ -29,18 +29,9 @@ public class Menu(List<IExercise> exercises)
                 case >= 1 when choice <= exercises.Count:
                 {
                     var exercise = exercises[choice - 1];
-                    var spectreConsole = new SpectreConsole(exercises, exercise);
-
-                    AnsiConsole.Live(spectreConsole.BuildRenderable())
-                        .Start(context =>
-                        {
-                            spectreConsole.SetContext(context);
-                            exercise.Run(spectreConsole);
-                        });
-
-                    Console.WriteLine();
-                    Console.WriteLine("Press any key to continue...");
-                    Console.ReadKey();
+                    exercise.Run(new SpectreConsole(exercises, exercise));
+                    AnsiConsole.Markup("\n[grey]Press any key to return to menu...[/]");
+                    Console.ReadKey(true);
                     break;
                 }
                 default:

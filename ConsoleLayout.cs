@@ -39,15 +39,18 @@ public class ConsoleLayout(List<IExercise> exercises)
             $"[italic]{Markup.Escape(exercise.Description)}[/]\n" +
             $"[grey]──────────────────────────────────────────────[/]\n");
 
-        AnsiConsole.Write(new Columns(
-                new Panel(BuildMenuMarkup())
-                    .RoundedBorder()
-                    .Header("[bold]Main Menu[/]"),
-                new Panel(mainContent)
-                    .RoundedBorder()
-                    .Header($"[bold]{Markup.Escape(exercise.Title)}[/]\n")
-            )
+        var table = new Table().NoBorder().HideHeaders().Expand();
+        table.AddColumn(new TableColumn(string.Empty).Width(38));
+        table.AddColumn(new TableColumn(string.Empty));
+        table.AddRow(
+            new Panel(BuildMenuMarkup())
+                .RoundedBorder()
+                .Header("[bold]Main Menu[/]"),
+            new Panel(mainContent)
+                .RoundedBorder()
+                .Header($"[bold]{Markup.Escape(exercise.Title)}[/]")
         );
+        AnsiConsole.Write(table);
 
         AnsiConsole.Write(
                 new Markup("ℹ️ [blue]Press any key to continue...[/]"))

@@ -9,8 +9,7 @@ public class ThirdWordExercise : IExercise
 
     public void Run(IConsoleAdapter console)
     {
-        console.Write("Skriv en mening med minst 3 ord: ");
-        string? mening = Console.ReadLine();
+        string? mening = console.ReadLine("Skriv en mening med minst 3 ord: ");
 
         if (string.IsNullOrWhiteSpace(mening))
         {

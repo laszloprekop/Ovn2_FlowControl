@@ -1,5 +1,3 @@
-using System;
-
 namespace Ovn2_FlowControl;
 
 public class SingleTicketExercise : IExercise
@@ -9,8 +7,7 @@ public class SingleTicketExercise : IExercise
 
     public void Run(IConsoleAdapter console)
     {
-        console.Write("Ange ålder: ");
-        string? input = Console.ReadLine();
+        string? input = console.ReadLine("Ange ålder: ");
 
         if (!int.TryParse(input, out int alder)) // Jämför med int.Parse(input) --> "hej" --> Exception
         {
