@@ -1,8 +1,8 @@
 namespace Ovn2_FlowControl;
 
-public class Person
+public class Person(int age)
 {
-    public int Age { get; set; }
+    public int Age { get; } = age;
 
     public int GetTicketPrice()
     {
