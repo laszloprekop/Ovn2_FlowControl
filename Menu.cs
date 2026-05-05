@@ -12,10 +12,10 @@ public class Menu(List<IExercise> exercises)
         while (running)
         {
             Console.WriteLine("Välkommen till huvudmenyn.");
-            Console.WriteLine("0 →  Avsluta");
+            Console.WriteLine("[0] →  Avsluta");
 
             for (int i = 0; i < exercises.Count; i++)
-                Console.WriteLine($"{i + 1} → {exercises[i].Title}");
+                Console.WriteLine($"[{i + 1}] →  {exercises[i].Title}");
 
             Console.Write("> ");
 
@@ -37,6 +37,6 @@ public class Menu(List<IExercise> exercises)
             }
         }
 
-        Console.WriteLine("");
+        Console.WriteLine();
     }
 }
