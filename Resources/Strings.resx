@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="exercise_ticket_title" xml:space="preserve"><value>Single Ticket Price</value></data>
+    <data name="exercise_ticket_desc" xml:space="preserve"><value>Calculates price for a single person</value></data>
+    <data name="exercise_ticket_prompt_age" xml:space="preserve"><value>Enter age: </value></data>
+    <data name="exercise_ticket_youth" xml:space="preserve"><value>Youth price: 80 kr</value></data>
+    <data name="exercise_ticket_senior" xml:space="preserve"><value>Senior price: 90 kr</value></data>
+    <data name="exercise_ticket_standard" xml:space="preserve"><value>Standard price: 120 kr</value></data>
+    <data name="exercise_ticket_err_age" xml:space="preserve"><value>Invalid age.</value></data>
+    <data name="exercise_group_title" xml:space="preserve"><value>Group Ticket Price</value></data>
+    <data name="exercise_group_desc" xml:space="preserve"><value>Calculates price for a group with different ages</value></data>
+    <data name="exercise_group_prompt_count" xml:space="preserve"><value>How many people? </value></data>
+    <data name="exercise_group_prompt_age" xml:space="preserve"><value>Enter age for person {0}: </value></data>
+    <data name="exercise_group_free" xml:space="preserve"><value>Person {0}: Free</value></data>
+    <data name="exercise_group_err_count" xml:space="preserve"><value>Invalid number of people.</value></data>
+    <data name="exercise_group_err_age" xml:space="preserve"><value>Invalid age.</value></data>
+    <data name="exercise_group_result_count" xml:space="preserve"><value>Number of people: {0}</value></data>
+    <data name="exercise_group_result_total" xml:space="preserve"><value>Total cost: {0} kr</value></data>
+    <data name="exercise_repeat_title" xml:space="preserve"><value>Text Repeater</value></data>
+    <data name="exercise_repeat_desc" xml:space="preserve"><value>Repeats the provided text 10 times</value></data>
+    <data name="exercise_repeat_prompt" xml:space="preserve"><value>Enter text: </value></data>
+    <data name="exercise_word_title" xml:space="preserve"><value>What's the Third Word?</value></data>
+    <data name="exercise_word_desc" xml:space="preserve"><value>Finds the third word in a sentence</value></data>
+    <data name="exercise_word_prompt" xml:space="preserve"><value>Enter a sentence with at least 3 words: </value></data>
+    <data name="exercise_word_err_empty" xml:space="preserve"><value>You must enter a sentence.</value></data>
+    <data name="exercise_word_err_short" xml:space="preserve"><value>Sentence must contain at least 3 words.</value></data>
+    <data name="exercise_word_result" xml:space="preserve"><value>The third word is: {0}</value></data>
+    <data name="settings_title" xml:space="preserve"><value>Settings</value></data>
+    <data name="settings_desc" xml:space="preserve"><value>Language and preferences</value></data>
+    <data name="settings_prompt" xml:space="preserve"><value>Select language:</value></data>
+    <data name="settings_saved" xml:space="preserve"><value>Language saved.</value></data>
+    <data name="menu_title" xml:space="preserve"><value>Main Menu</value></data>
+    <data name="menu_exit_message" xml:space="preserve"><value>Program closing.</value></data>
+    <data name="menu_invalid" xml:space="preserve"><value>Invalid choice. Select 0–{0}.</value></data>
+    <data name="menu_press_key" xml:space="preserve"><value>Press any key to return to menu...</value></data>
+</root>
+
+        
