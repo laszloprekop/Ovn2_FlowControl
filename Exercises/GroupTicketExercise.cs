@@ -1,19 +1,19 @@
-using System;
 using Ovn2_FlowControl.Contracts;
+using Ovn2_FlowControl.Localization;
 
 namespace Ovn2_FlowControl.Exercises;
 
 public class GroupTicketExercise : ExerciseBase
 {
-    public GroupTicketExercise() : base("Group Ticket Price", "Calculates price for a group with different ages") { }
+    public GroupTicketExercise() : base("exercise_group_title", "exercise_group_desc") { }
 
     public override void Run(IConsoleAdapter console)
     {
-        string? antalInput = console.ReadLine("Hur många personer är ni? ");
+        string? antalInput = console.ReadLine(Loc.Get("exercise_group_prompt_count"));
 
         if (!int.TryParse(antalInput, out int antal) || antal <= 0)
         {
-            console.WriteLine("Ogiltigt antal personer.");
+            console.WriteLine(Loc.Get("exercise_group_err_count"));
             return;
         }
 
@@ -21,11 +21,11 @@ public class GroupTicketExercise : ExerciseBase
 
         for (int i = 1; i <= antal; i++)
         {
-            string? alderInput = console.ReadLine($"Ange ålder för person {i}: ");
+            string? alderInput = console.ReadLine(string.Format(Loc.Get("exercise_group_prompt_age"), i));
 
             if (!int.TryParse(alderInput, out int alder) || alder < 0)
             {
-                console.WriteLine("Ogiltig ålder.");
+                console.WriteLine(Loc.Get("exercise_group_err_age"));
                 return;
             }
 
@@ -33,16 +33,12 @@ public class GroupTicketExercise : ExerciseBase
             var price = person.GetTicketPrice();
 
             if (price == 0)
-            {
-                console.WriteLine($"Person {i}: Gratis");
-            }
+                console.WriteLine(string.Format(Loc.Get("exercise_group_free"), i));
             else
-            {
                 total += price;
-            }
         }
 
-        console.WriteLine($"Antal personer: {antal}");
-        console.WriteLine($"Totalkostnad: {total} kr");
+        console.WriteLine(string.Format(Loc.Get("exercise_group_result_count"), antal));
+        console.WriteLine(string.Format(Loc.Get("exercise_group_result_total"), total));
     }
 }

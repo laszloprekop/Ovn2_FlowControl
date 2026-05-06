@@ -1,19 +1,20 @@
 using System;
 using Ovn2_FlowControl.Contracts;
+using Ovn2_FlowControl.Localization;
 
 namespace Ovn2_FlowControl.Exercises;
 
 public class ThirdWordExercise : ExerciseBase
 {
-    public ThirdWordExercise() : base("What's the Third Word?", "Finds the third word in a sentence") { }
+    public ThirdWordExercise() : base("exercise_word_title", "exercise_word_desc") { }
 
     public override void Run(IConsoleAdapter console)
     {
-        string? mening = console.ReadLine("Skriv en mening med minst 3 ord: ");
+        string? mening = console.ReadLine(Loc.Get("exercise_word_prompt"));
 
         if (string.IsNullOrWhiteSpace(mening))
         {
-            console.WriteLine("Du måste skriva en mening.");
+            console.WriteLine(Loc.Get("exercise_word_err_empty"));
             return;
         }
 
@@ -21,10 +22,10 @@ public class ThirdWordExercise : ExerciseBase
 
         if (ord.Length < 3)
         {
-            console.WriteLine("Mening måste innehålla minst 3 ord.");
+            console.WriteLine(Loc.Get("exercise_word_err_short"));
             return;
         }
 
-        console.WriteLine($"Det tredje ordet är: {ord[2]}");
+        console.WriteLine(string.Format(Loc.Get("exercise_word_result"), ord[2]));
     }
 }
