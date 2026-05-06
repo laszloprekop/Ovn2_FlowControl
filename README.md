@@ -36,6 +36,14 @@ classDiagram
         +Render()
     }
 
+    class ExerciseBase {
+        <<abstract>>
+        +Title string
+        +Description string
+        #ExerciseBase(string, string)
+        +Run(IConsoleAdapter)*
+        +ToString() string
+    }
     class SingleTicketExercise {
         +Run(IConsoleAdapter)
     }
@@ -51,6 +59,7 @@ classDiagram
     class Person {
         +Age int
         +GetTicketPrice() int
+        +ToString() string
     }
 
     class StandardConsole {
@@ -79,10 +88,11 @@ classDiagram
         +Run()
     }
 
-    SingleTicketExercise ..|> IExercise
-    GroupTicketExercise ..|> IExercise
-    RepeatTextExercise ..|> IExercise
-    ThirdWordExercise ..|> IExercise
+    ExerciseBase ..|> IExercise
+    SingleTicketExercise --|> ExerciseBase
+    GroupTicketExercise --|> ExerciseBase
+    RepeatTextExercise --|> ExerciseBase
+    ThirdWordExercise --|> ExerciseBase
     StandardConsole ..|> IConsoleAdapter
     SpectreConsole ..|> IConsoleAdapter
     SpectreHeader ..|> IViewFragment
