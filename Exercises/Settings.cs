@@ -6,7 +6,7 @@ using Spectre.Console;
 
 namespace Ovn2_FlowControl.Exercises;
 
-public class SettingsExercise : ExerciseBase
+public class Settings : ExerciseBase
 {
     private static readonly Dictionary<string, string> Languages = new()
     {
@@ -24,13 +24,13 @@ public class SettingsExercise : ExerciseBase
         }
     };
     
-    public SettingsExercise()
-        : base("exercise_settings_title", "exercise_settings_desc"){}
+    public Settings()
+        : base("settings_title", "settings_desc"){}
 
     public override void Run(IConsoleAdapter console)
     {
         var prompt = new SelectionPrompt<string>()
-            .Title(Loc.Get("exercise_settings_prompt_lang"))
+            .Title(Loc.Get("settings_prompt"))
             .AddChoices(Languages.Keys);
         
         var selected = AnsiConsole.Prompt(prompt);
@@ -38,6 +38,6 @@ public class SettingsExercise : ExerciseBase
         
         Loc.SetCulture(CultureInfo.GetCultureInfo(tag));
         SettingsStore.Save(tag);
-        console.WriteLine(Loc.Get("exercise_settings_result"));
+        console.WriteLine(Loc.Get("settings_saved"));
     }
 }
