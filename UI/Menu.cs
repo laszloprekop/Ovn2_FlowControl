@@ -32,7 +32,7 @@ public class Menu(List<IExercise> exercises)
                 {
                     var exercise = exercises[choice - 1];
                     exercise.Run(new SpectreConsole(exercises, exercise));
-                    AnsiConsole.Markup($"\n[grey]{Markup.Escape(Loc.Get("menu_press_key"))}[/]");
+                    AnsiConsole.Markup($"\n[white]{Markup.Escape(Loc.Get("menu_press_key"))}[/]");
                     Console.ReadKey(true);
                     break;
                 }
