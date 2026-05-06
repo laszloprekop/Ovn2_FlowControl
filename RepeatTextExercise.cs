@@ -1,11 +1,10 @@
 namespace Ovn2_FlowControl;
 
-public class RepeatTextExercise : IExercise
+public class RepeatTextExercise : ExerciseBase
 {
-    public string Title => "Text Repeater";
-    public string Description => "Repeats the provided text 10 times";
-
-    public void Run(IConsoleAdapter console)
+    public RepeatTextExercise() : base("Text Repeater", "Repeats the provided text 10 times") { }
+    
+    public override void Run(IConsoleAdapter console)
     {
         string? text = console.ReadLine("Skriv en text: ");
 

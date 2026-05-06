@@ -2,12 +2,11 @@ using System;
 
 namespace Ovn2_FlowControl;
 
-public class ThirdWordExercise : IExercise
+public class ThirdWordExercise : ExerciseBase
 {
-    public string Title => "What's the Third Word?";
-    public string Description => "Finds the third word in a sentence";
+    public ThirdWordExercise() : base("What's the Third Word?", "Finds the third word in a sentence") { }
 
-    public void Run(IConsoleAdapter console)
+    public override void Run(IConsoleAdapter console)
     {
         string? mening = console.ReadLine("Skriv en mening med minst 3 ord: ");
 

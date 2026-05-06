@@ -1,13 +1,11 @@
 namespace Ovn2_FlowControl;
 
-public class SingleTicketExercise : IExercise
+public class SingleTicketExercise : ExerciseBase
 {
-    public string Title => "Single Ticket Price calculator";
-    public string Description => "Calculates price based on age";
-
-    public void Run(IConsoleAdapter console)
+    public SingleTicketExercise() : base("Single Ticket Price", "Calculates price for a single person") { }
+    public override void Run(IConsoleAdapter console)
     {
-        string? input = console.ReadLine("Ange ålder: ");
+        string? input = console.ReadLine("Ange ålder:\u00A0");
 
         if (!int.TryParse(input, out int alder)) // Jämför med int.Parse(input) --> "hej" --> Exception
         {

@@ -2,12 +2,11 @@ using System;
 
 namespace Ovn2_FlowControl;
 
-public class GroupTicketExercise : IExercise
+public class GroupTicketExercise : ExerciseBase
 {
-    public string Title => "Group Ticket Price calculator";
-    public string Description => "Calculates price for a group with different ages";
+    public GroupTicketExercise() : base("Group Ticket Price", "Calculates price for a group with different ages") { }
 
-    public void Run(IConsoleAdapter console)
+    public override void Run(IConsoleAdapter console)
     {
         string? antalInput = console.ReadLine("Hur många personer är ni? ");
 
