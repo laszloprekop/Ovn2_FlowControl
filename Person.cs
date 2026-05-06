@@ -14,4 +14,6 @@ public class Person(int age)
             _ => 120
         };
     }
+
+    public override string ToString() => $"Person(Age={Age}, Price={GetTicketPrice()}kr)";
 }
