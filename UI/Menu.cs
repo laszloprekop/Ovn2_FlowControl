@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Spectre.Console;
-
 using Ovn2_FlowControl.Contracts;
+using Ovn2_FlowControl.Localization;
 
 namespace Ovn2_FlowControl.UI;
 
@@ -26,18 +26,18 @@ public class Menu(List<IExercise> exercises)
             {
                 case 0:
                     running = false;
-                    Console.WriteLine("Programmet avslutas.");
+                    Console.WriteLine(Loc.Get("menu_exit_message"));
                     break;
                 case >= 1 when choice <= exercises.Count:
                 {
                     var exercise = exercises[choice - 1];
                     exercise.Run(new SpectreConsole(exercises, exercise));
-                    AnsiConsole.Markup("\n[grey]Press any key to return to menu...[/]");
+                    AnsiConsole.Markup($"\n[grey]{Markup.Escape(Loc.Get("menu_press_key"))}[/]");
                     Console.ReadKey(true);
                     break;
                 }
                 default:
-                    Console.WriteLine($"Felaktig val. välj 0-{exercises.Count}.");
+                    Console.WriteLine(string.Format(Loc.Get("menu_invalid"), exercises.Count));
                     break;
             }
         }

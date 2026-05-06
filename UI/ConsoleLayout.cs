@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Text;
 using Spectre.Console;
-
 using Ovn2_FlowControl.Contracts;
+using Ovn2_FlowControl.Localization;
 
 namespace Ovn2_FlowControl.UI;
 
@@ -16,10 +16,10 @@ public class ConsoleLayout(List<IExercise> exercises)
             new Panel(BuildMenuMarkup())
                 .RoundedBorder()
                 .BorderColor(Color.SkyBlue2)
-                .Header("[bold]Main Menu[/]")
+                .Header($"[bold]{Markup.Escape(Loc.Get("menu_title"))}[/]")
         );
         AnsiConsole.Write(
-                new Markup($"[white][[0]][/] Avsluta · [white][[1-{exercises.Count}]][/] Välj övning\n"))
+                new Markup($"[white][[0]][/] {Markup.Escape(Loc.Get("menu_exit"))} · [white][[1-{exercises.Count}]][/] {Markup.Escape(Loc.Get("menu_choose"))}\n"))
             ;
     }
 
@@ -47,7 +47,7 @@ public class ConsoleLayout(List<IExercise> exercises)
         table.AddRow(
             new Panel(BuildMenuMarkup())
                 .RoundedBorder()
-                .Header("[bold]Main Menu[/]"),
+                .Header($"[bold]{Markup.Escape(Loc.Get("menu_title"))}[/]"),
             new Panel(mainContent)
                 .RoundedBorder()
                 .Header($"[bold]{Markup.Escape(exercise.Title)}[/]")

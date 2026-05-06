@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using Spectre.Console;
 using Spectre.Console.Rendering;
-
 using Ovn2_FlowControl.Contracts;
+using Ovn2_FlowControl.Localization;
 
 namespace Ovn2_FlowControl.UI;
 
@@ -76,7 +76,7 @@ public class SpectreConsole(List<IExercise> exercises, IExercise currentExercise
         table.AddRow(
             new Panel(new Markup(sb.ToString()))
                 .RoundedBorder()
-                .Header("[bold]Main Menu[/]"),
+                .Header($"[bold]{Markup.Escape(Loc.Get("menu_title"))}[/]"),
             new Panel(mainContent)
                 .RoundedBorder()
                 .BorderColor(Color.SkyBlue2)
