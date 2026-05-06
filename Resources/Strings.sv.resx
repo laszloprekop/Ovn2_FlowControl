@@ -51,5 +51,7 @@
     <data name="menu_exit_message" xml:space="preserve"><value>Programmet avslutas.</value></data>
     <data name="menu_invalid" xml:space="preserve"><value>Felaktigt val. Välj 0–{0}.</value></data>
     <data name="menu_press_key" xml:space="preserve"><value>Tryck på valfri tangent för att återgå till menyn...</value></data>
+    <data name="menu_exit" xml:space="preserve"><value>Avsluta</value></data>
+    <data name="menu_choose" xml:space="preserve"><value>Välj övning</value></data>
 
 </root>

@@ -57,4 +57,6 @@
     <data name="menu_exit_message" xml:space="preserve"><value>Το πρόγραμμα κλείνει.</value></data>
     <data name="menu_invalid" xml:space="preserve"><value>Μη έγκυρη επιλογή. Επιλέξτε 0–{0}.</value></data>
     <data name="menu_press_key" xml:space="preserve"><value>Πατήστε οποιοδήποτε πλήκτρο για επιστροφή στο μενού...</value></data>
+    <data name="menu_exit" xml:space="preserve"><value>Έξοδος</value></data>
+    <data name="menu_choose" xml:space="preserve"><value>Επιλογή άσκησης</value></data>
 </root>

@@ -51,4 +51,6 @@
     <data name="menu_exit_message" xml:space="preserve"><value>A program kilép.</value></data>
     <data name="menu_invalid" xml:space="preserve"><value>Érvénytelen választás. Válasszon 0–{0} közül.</value></data>
     <data name="menu_press_key" xml:space="preserve"><value>Nyomjon meg egy gombot a menübe való visszatéréshez...</value></data>
+    <data name="menu_exit" xml:space="preserve"><value>Kilépés</value></data>
+    <data name="menu_choose" xml:space="preserve"><value>Válasszon gyakorlatot</value></data>
 </root>

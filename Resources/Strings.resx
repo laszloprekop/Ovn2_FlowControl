@@ -51,6 +51,8 @@
     <data name="menu_exit_message" xml:space="preserve"><value>Program closing.</value></data>
     <data name="menu_invalid" xml:space="preserve"><value>Invalid choice. Select 0–{0}.</value></data>
     <data name="menu_press_key" xml:space="preserve"><value>Press any key to return to menu...</value></data>
+    <data name="menu_exit" xml:space="preserve"><value>Exit</value></data>
+    <data name="menu_choose" xml:space="preserve"><value>Choose exercise</value></data>
 </root>
 
         
