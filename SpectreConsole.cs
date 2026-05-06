@@ -42,7 +42,7 @@ public class SpectreConsole(List<IExercise> exercises, IExercise currentExercise
         int descRows = (int)Math.Ceiling(currentExercise.Description.Length / (double)rightContentWidth);
         int promptLen = _lines[^1].Length;
         int row = descRows + _lines.Count + 2 + promptLen / rightContentWidth;
-        int col = 40 + promptLen % rightContentWidth;
+        int col = 40 + promptLen % rightContentWidth + 1;
         Console.SetCursorPosition(Math.Min(col, Console.WindowWidth - 1), Math.Min(row, Console.WindowHeight - 1));
 
         var input = Console.ReadLine() ?? string.Empty;
