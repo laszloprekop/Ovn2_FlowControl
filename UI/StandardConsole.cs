@@ -1,6 +1,7 @@
 using System;
+using Ovn2_FlowControl.Contracts;
 
-namespace Ovn2_FlowControl;
+namespace Ovn2_FlowControl.UI;
 
 public class StandardConsole : IConsoleAdapter
 

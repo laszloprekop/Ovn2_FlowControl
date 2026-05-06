@@ -1,4 +1,6 @@
-namespace Ovn2_FlowControl;
+using Ovn2_FlowControl.Contracts;
+
+namespace Ovn2_FlowControl.Exercises;
 
 public class SingleTicketExercise : ExerciseBase
 {

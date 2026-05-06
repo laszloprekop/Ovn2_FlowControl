@@ -1,6 +1,8 @@
 using Spectre.Console;
 
-namespace Ovn2_FlowControl;
+using Ovn2_FlowControl.Contracts;
+
+namespace Ovn2_FlowControl.UI;
 
 class SpectreHeader : IViewFragment
 {

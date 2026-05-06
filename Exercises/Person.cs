@@ -1,4 +1,4 @@
-namespace Ovn2_FlowControl;
+namespace Ovn2_FlowControl.Exercises;
 
 public class Person(int age)
 {

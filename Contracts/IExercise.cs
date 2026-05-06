@@ -1,4 +1,4 @@
-namespace Ovn2_FlowControl;
+namespace Ovn2_FlowControl.Contracts;
 
 public interface IExercise
 {

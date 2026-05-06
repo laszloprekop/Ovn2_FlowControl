@@ -1,6 +1,7 @@
 using System;
+using Ovn2_FlowControl.Contracts;
 
-namespace Ovn2_FlowControl;
+namespace Ovn2_FlowControl.Exercises;
 
 public class ThirdWordExercise : ExerciseBase
 {

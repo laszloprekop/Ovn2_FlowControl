@@ -5,7 +5,9 @@ using System.Text;
 using Spectre.Console;
 using Spectre.Console.Rendering;
 
-namespace Ovn2_FlowControl;
+using Ovn2_FlowControl.Contracts;
+
+namespace Ovn2_FlowControl.UI;
 
 public class SpectreConsole(List<IExercise> exercises, IExercise currentExercise) : IConsoleAdapter
 {
