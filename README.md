@@ -17,10 +17,82 @@ A C# console application built as part of the Lexicon .NET course. The project r
 
 The refactor introduces a small set of interfaces that decouple presentation from logic:
 
-```
-IExercise           — Title, Description, Run(IConsoleAdapter)
-IConsoleAdapter     — Write, WriteLine, ReadLine
-IViewFragment       — Render()
+```mermaid
+classDiagram
+    class IExercise {
+        <<interface>>
+        +Title string
+        +Description string
+        +Run(IConsoleAdapter)
+    }
+    class IConsoleAdapter {
+        <<interface>>
+        +Write(string)
+        +WriteLine(string)
+        +ReadLine(string) string?
+    }
+    class IViewFragment {
+        <<interface>>
+        +Render()
+    }
+
+    class SingleTicketExercise {
+        +Run(IConsoleAdapter)
+    }
+    class GroupTicketExercise {
+        +Run(IConsoleAdapter)
+    }
+    class RepeatTextExercise {
+        +Run(IConsoleAdapter)
+    }
+    class ThirdWordExercise {
+        +Run(IConsoleAdapter)
+    }
+    class Person {
+        +Age int
+        +GetTicketPrice() int
+    }
+
+    class StandardConsole {
+        +Write(string)
+        +WriteLine(string)
+        +ReadLine(string) string?
+    }
+    class SpectreConsole {
+        -_lines List~string~
+        +Write(string)
+        +WriteLine(string)
+        +ReadLine(string) string?
+    }
+    class SpectreHeader {
+        -_title string
+        -_description string
+        +Render()
+    }
+
+    class ConsoleLayout {
+        +RenderMenu()
+        +RenderExercise(IExercise)
+    }
+    class Menu {
+        -_layout ConsoleLayout
+        +Run()
+    }
+
+    SingleTicketExercise ..|> IExercise
+    GroupTicketExercise ..|> IExercise
+    RepeatTextExercise ..|> IExercise
+    ThirdWordExercise ..|> IExercise
+    StandardConsole ..|> IConsoleAdapter
+    SpectreConsole ..|> IConsoleAdapter
+    SpectreHeader ..|> IViewFragment
+
+    Menu *-- ConsoleLayout : composes
+    Menu ..> SpectreConsole : creates
+    Menu ..> IExercise : dispatches
+    ConsoleLayout ..> IExercise : renders
+    SpectreConsole ..> IExercise : renders
+    GroupTicketExercise ..> Person : creates
 ```
 
 `SpectreConsole` implements `IConsoleAdapter` and renders all exercise I/O live inside the right panel, re-drawing on every write or read. `StandardConsole` is a plain pass-through wrapper around `System.Console` used for testing without the UI.
