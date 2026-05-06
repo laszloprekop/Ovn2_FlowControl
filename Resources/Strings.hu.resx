@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="exercise_ticket_title" xml:space="preserve"><value>Egyéni Jegyár</value></data>
+    <data name="exercise_ticket_desc" xml:space="preserve"><value>Kiszámolja egy személy jegyének árát</value></data>
+    <data name="exercise_ticket_prompt_age" xml:space="preserve"><value>Adja meg a kort: </value></data>
+    <data name="exercise_ticket_youth" xml:space="preserve"><value>Ifjúsági ár: 80 kr</value></data>
+    <data name="exercise_ticket_senior" xml:space="preserve"><value>Nyugdíjas ár: 90 kr</value></data>
+    <data name="exercise_ticket_standard" xml:space="preserve"><value>Normál ár: 120 kr</value></data>
+    <data name="exercise_ticket_err_age" xml:space="preserve"><value>Érvénytelen kor.</value></data>
+    <data name="exercise_group_title" xml:space="preserve"><value>Csoportos jegyár</value></data>
+    <data name="exercise_group_desc" xml:space="preserve"><value>Kiszámítja a csoport összköltségét különböző korokkal</value></data>
+    <data name="exercise_group_prompt_count" xml:space="preserve"><value>Hány személy? </value></data>
+    <data name="exercise_group_prompt_age" xml:space="preserve"><value>Adja meg a(z) {0}. személy korát: </value></data>
+    <data name="exercise_group_free" xml:space="preserve"><value>{0}. személy: Ingyenes</value></data>
+    <data name="exercise_group_err_count" xml:space="preserve"><value>Érvénytelen személyszám.</value></data>
+    <data name="exercise_group_err_age" xml:space="preserve"><value>Érvénytelen kor.</value></data>
+    <data name="exercise_group_result_count" xml:space="preserve"><value>Személyek száma: {0}</value></data>
+    <data name="exercise_group_result_total" xml:space="preserve"><value>Összköltség: {0} kr</value></data>
+    <data name="exercise_repeat_title" xml:space="preserve"><value>Szöveg Ismétlő</value></data>
+    <data name="exercise_repeat_desc" xml:space="preserve"><value>10-szer megismétli a megadott szöveget</value></data>
+    <data name="exercise_repeat_prompt" xml:space="preserve"><value>Írjon be egy szöveget: </value></data>
+    <data name="exercise_word_title" xml:space="preserve"><value>Mi a Harmadik Szó?</value></data>
+    <data name="exercise_word_desc" xml:space="preserve"><value>Megkeresi a harmadik szót egy mondatban</value></data>
+    <data name="exercise_word_prompt" xml:space="preserve"><value>Írjon be egy mondatot legalább 3 szóval: </value></data>
+    <data name="exercise_word_err_empty" xml:space="preserve"><value>Be kell írnia egy mondatot.</value></data>
+    <data name="exercise_word_err_short" xml:space="preserve"><value>A mondatnak legalább 3 szót kell tartalmaznia.</value></data>
+    <data name="exercise_word_result" xml:space="preserve"><value>A harmadik szó: {0}</value></data>
+    <data name="settings_title" xml:space="preserve"><value>Beállítások</value></data>
+    <data name="settings_desc" xml:space="preserve"><value>Nyelv és beállítások</value></data>
+    <data name="settings_prompt" xml:space="preserve"><value>Válasszon nyelvet:</value></data>
+    <data name="settings_saved" xml:space="preserve"><value>Nyelv mentve.</value></data>
+    <data name="menu_title" xml:space="preserve"><value>Főmenü</value></data>
+    <data name="menu_exit_message" xml:space="preserve"><value>A program kilép.</value></data>
+    <data name="menu_invalid" xml:space="preserve"><value>Érvénytelen választás. Válasszon 0–{0} közül.</value></data>
+    <data name="menu_press_key" xml:space="preserve"><value>Nyomjon meg egy gombot a menübe való visszatéréshez...</value></data>
+</root>

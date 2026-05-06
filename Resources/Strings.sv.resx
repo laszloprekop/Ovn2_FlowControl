@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="exercise_ticket_title" xml:space="preserve"><value>Enkelbiljettpris</value></data>
+    <data name="exercise_ticket_desc" xml:space="preserve"><value>Beräknar pris för en person</value></data>
+    <data name="exercise_ticket_prompt_age" xml:space="preserve"><value>Ange ålder: </value></data>
+    <data name="exercise_ticket_youth" xml:space="preserve"><value>Ungdomspris: 80 kr</value></data>
+    <data name="exercise_ticket_senior" xml:space="preserve"><value>Pensionärspris: 90 kr</value></data>
+    <data name="exercise_ticket_standard" xml:space="preserve"><value>Standardpris: 120 kr</value></data>
+    <data name="exercise_ticket_err_age" xml:space="preserve"><value>Ogiltig ålder.</value></data>
+    <data name="exercise_group_title" xml:space="preserve"><value>Grupppris</value></data>
+    <data name="exercise_group_desc" xml:space="preserve"><value>Beräknar totalpris för en grupp med olika åldrar</value></data>
+    <data name="exercise_group_prompt_count" xml:space="preserve"><value>Hur många personer är ni? </value></data>
+    <data name="exercise_group_prompt_age" xml:space="preserve"><value>Ange ålder för person {0}: </value></data>
+    <data name="exercise_group_free" xml:space="preserve"><value>Person {0}: Gratis</value></data>
+    <data name="exercise_group_err_count" xml:space="preserve"><value>Ogiltigt antal personer.</value></data>
+    <data name="exercise_group_err_age" xml:space="preserve"><value>Ogiltig ålder.</value></data>
+    <data name="exercise_group_result_count" xml:space="preserve"><value>Antal personer: {0}</value></data>
+    <data name="exercise_group_result_total" xml:space="preserve"><value>Totalkostnad: {0} kr</value></data>
+    <data name="exercise_repeat_title" xml:space="preserve"><value>Textupprepare</value></data>
+    <data name="exercise_repeat_desc" xml:space="preserve"><value>Upprepar den angivna texten 10 gånger</value></data>
+    <data name="exercise_repeat_prompt" xml:space="preserve"><value>Skriv en text: </value></data>
+    <data name="exercise_word_title" xml:space="preserve"><value>Vad är det tredje ordet?</value></data>
+    <data name="exercise_word_desc" xml:space="preserve"><value>Hittar det tredje ordet i en mening</value></data>
+    <data name="exercise_word_prompt" xml:space="preserve"><value>Skriv en mening med minst 3 ord: </value></data>
+    <data name="exercise_word_err_empty" xml:space="preserve"><value>Du måste skriva en mening.</value></data>
+    <data name="exercise_word_err_short" xml:space="preserve"><value>Meningen måste innehålla minst 3 ord.</value></data>
+    <data name="exercise_word_result" xml:space="preserve"><value>Det tredje ordet är: {0}</value></data>
+    <data name="settings_title" xml:space="preserve"><value>Inställningar</value></data>
+    <data name="settings_desc" xml:space="preserve"><value>Språk och inställningar</value></data>
+    <data name="settings_prompt" xml:space="preserve"><value>Välj språk:</value></data>
+    <data name="settings_saved" xml:space="preserve"><value>Språk sparat.</value></data>
+    <data name="menu_title" xml:space="preserve"><value>Huvudmeny</value></data>
+    <data name="menu_exit_message" xml:space="preserve"><value>Programmet avslutas.</value></data>
+    <data name="menu_invalid" xml:space="preserve"><value>Felaktigt val. Välj 0–{0}.</value></data>
+    <data name="menu_press_key" xml:space="preserve"><value>Tryck på valfri tangent för att återgå till menyn...</value></data>
+
+</root>
