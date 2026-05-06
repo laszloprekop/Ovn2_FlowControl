@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Globalization;
 using Ovn2_FlowControl.Contracts;
 using Ovn2_FlowControl.Localization;
 using Spectre.Console;
@@ -34,5 +35,9 @@ public class SettingsExercise : ExerciseBase
         
         var selected = AnsiConsole.Prompt(prompt);
         var tag = Languages[selected];
+        
+        Loc.SetCulture(CultureInfo.GetCultureInfo(tag));
+        SettingsStore.Save(tag);
+        console.WriteLine(Loc.Get("exercise_settings_result"));
     }
 }
