@@ -21,10 +21,10 @@ public class SingleTicketExercise : ExerciseBase
         }
 
         if (alder < 20)
-            console.WriteLine(Loc.Get("exercise_ticket_youth"));
+            console.WriteResult(Loc.Get("exercise_ticket_youth"));
         else if (alder > 64)
-            console.WriteLine(Loc.Get("exercise_ticket_senior"));
+            console.WriteResult(Loc.Get("exercise_ticket_senior"));
         else
-            console.WriteLine(Loc.Get("exercise_ticket_standard"));
+            console.WriteResult(Loc.Get("exercise_ticket_standard"));
     }
 }

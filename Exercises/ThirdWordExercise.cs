@@ -10,7 +10,8 @@ public class ThirdWordExercise : ExerciseBase
 
     public override void Run(IConsoleAdapter console)
     {
-        string? mening = console.ReadLine(Loc.Get("exercise_word_prompt"));
+        console.WriteLine(Loc.Get("exercise_word_prompt"));
+        string? mening = console.ReadLine("");
 
         if (string.IsNullOrWhiteSpace(mening))
         {
@@ -26,6 +27,6 @@ public class ThirdWordExercise : ExerciseBase
             return;
         }
 
-        console.WriteLine(string.Format(Loc.Get("exercise_word_result"), ord[2]));
+        console.WriteResult(string.Format(Loc.Get("exercise_word_result"), ord[2]));
     }
 }

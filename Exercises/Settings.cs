@@ -1,8 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Ovn2_FlowControl.Contracts;
 using Ovn2_FlowControl.Localization;
-using Spectre.Console;
 
 namespace Ovn2_FlowControl.Exercises;
 
@@ -29,13 +30,12 @@ public class Settings : ExerciseBase
 
     public override void Run(IConsoleAdapter console)
     {
-        var prompt = new SelectionPrompt<string>()
-            .Title(Loc.Get("settings_prompt"))
-            .AddChoices(Languages.Keys);
-        
-        var selected = AnsiConsole.Prompt(prompt);
+        var names = Languages.Keys.ToArray();
+        var currentTag = Loc.CurrentCulture.TwoLetterISOLanguageName;
+        var activeIndex = Array.FindIndex(names, n => Languages[n] == currentTag);
+        var selected = console.Select(Loc.Get("settings_prompt"), names, activeIndex);
         var tag = Languages[selected];
-        
+
         Loc.SetCulture(CultureInfo.GetCultureInfo(tag));
         SettingsStore.Save(tag);
         console.WriteLine(Loc.Get("settings_saved"));

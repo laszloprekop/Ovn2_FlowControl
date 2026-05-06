@@ -38,7 +38,7 @@ public class GroupTicketExercise : ExerciseBase
                 total += price;
         }
 
-        console.WriteLine(string.Format(Loc.Get("exercise_group_result_count"), antal));
-        console.WriteLine(string.Format(Loc.Get("exercise_group_result_total"), total));
+        console.WriteResult(string.Format(Loc.Get("exercise_group_result_count"), antal));
+        console.WriteResult(string.Format(Loc.Get("exercise_group_result_total"), total));
     }
 }

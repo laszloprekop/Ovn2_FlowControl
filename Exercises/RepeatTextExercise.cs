@@ -1,3 +1,4 @@
+using System.Linq;
 using Ovn2_FlowControl.Contracts;
 using Ovn2_FlowControl.Localization;
 
@@ -11,9 +12,6 @@ public class RepeatTextExercise : ExerciseBase
     {
         string? text = console.ReadLine(Loc.Get("exercise_repeat_prompt"));
 
-        for (int i = 1; i <= 10; i++)
-            console.Write($"{i}. {text} ");
-
-        console.WriteLine("");
+        console.WriteResult(string.Join(", ", Enumerable.Range(1, 10).Select(i => $"{i}. {text}")));
     }
 }
